@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>La Boutique — Mystérieux Brand</title>
+<meta name="description" content="Shop Mystérieux apparel and headwear.">
+<link rel="icon" href="images/site/logo-black.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .shop-hero{display:grid;grid-template-columns:1.1fr .9fr;background:var(--night);color:var(--paper)}
+  .shop-hero .txt{padding:clamp(60px,8vw,120px) var(--pad);display:flex;flex-direction:column;justify-content:flex-end}
+  .shop-hero .eyebrow{color:#8d8a85}
+  .shop-hero .h-xl{margin:20px 0 24px}
+  .shop-hero p{color:#c9c6c0;max-width:460px}
+  .shop-hero figure{min-height:440px}
+  @media (max-width:800px){.shop-hero{grid-template-columns:1fr}.shop-hero figure{min-height:360px;order:-1}}
+  .filters{position:sticky;top:65px;z-index:20;display:flex;gap:8px;flex-wrap:wrap;padding:16px var(--pad);background:rgba(244,242,238,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--rule)}
+  .filters button{font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;padding:11px 16px;border:1px solid var(--rule);background:transparent;color:var(--ink);cursor:pointer;transition:.2s}
+  .filters button:hover{border-color:var(--ink)}
+  .filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .filters sup{font-size:9px;opacity:.6}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,1.8vw,26px) clamp(12px,1.6vw,22px);padding:40px var(--pad) 120px}
+  .card[hidden]{display:none}
+  @media (max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:640px){.grid{grid-template-columns:1fr 1fr}.filters{top:94px}}
+</style>
+</head>
+<body>
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:80;background:#2b3dff;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,Helvetica,Arial,sans-serif;padding:9px 16px;letter-spacing:.02em">Website preview — not live yet</div>
+
+<header class="bar">
+  <nav class="left" aria-label="Main">
+    <a href="index.html#atelier">L'Atelier</a>
+    <a href="index.html#barbers">Barbers</a>
+    <a href="shop.html" aria-current="page">La Boutique</a>
+    <a href="index.html#visit">Visit</a>
+  </nav>
+  <a class="logo" href="index.html" aria-label="Mystérieux home"><img src="images/site/logo-black.png" alt="Mystérieux"></a>
+  <div class="right">
+    <button class="cart" type="button" data-cart-open aria-label="Open bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="count" data-cart-count hidden></span></button>
+    <a class="btn" href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener">Book</a>
+  </div>
+</header>
+
+<div class="shop-hero">
+  <div class="txt">
+    <p class="eyebrow">Mystérieux Brand</p>
+    <h1 class="h-xl">La <span class="fr">Boutique</span></h1>
+    <p>Hoodies, jerseys, tees, caps and carry — designed in downtown San Jose by the crew behind the chair. Free shipping on orders over $100.</p>
+  </div>
+  <figure><img src="images/products/mysterieux-script-cotton-candy-tie-dye-hoodi-0.jpg" alt="Mystérieux Script tie-dye hoodie"></figure>
+</div>
+
+<div class="filters" role="toolbar" aria-label="Filter products"><button data-c="all" aria-pressed="true">All <sup>26</sup></button><button data-c="Tees &amp; Jerseys">Tees &amp; Jerseys <sup>7</sup></button><button data-c="Outerwear">Outerwear <sup>9</sup></button><button data-c="Headwear">Headwear <sup>9</sup></button><button data-c="Accessories">Accessories <sup>1</sup></button></div>
+
+<div class="grid">
+  <a class="card" data-cat="Tees & Jerseys" href="product/west-coast-is-the-best-coast.html"><div class="ph"><img src="images/products/west-coast-is-the-best-coast-0.jpg" alt="“West Coast Is The Best Coast” Tee" loading="lazy"><img src="images/products/west-coast-is-the-best-coast-1.jpg" alt="“West Coast Is The Best Coast” Tee" loading="lazy"></div><div class="meta"><b>“West Coast Is The Best Coast” Tee</b><span>$40</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Tees & Jerseys" href="product/west-coast-is-the-best-coast-x-49ers-tee.html"><div class="ph"><img src="images/products/west-coast-is-the-best-coast-x-49ers-tee-0.jpg" alt="“West Coast Is The Best Coast” X 49ers Tee" loading="lazy"><img src="images/products/west-coast-is-the-best-coast-x-49ers-tee-1.jpg" alt="“West Coast Is The Best Coast” X 49ers Tee" loading="lazy"></div><div class="meta"><b>“West Coast Is The Best Coast” X 49ers Tee</b><span>$40</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Tees & Jerseys" href="product/mystrieux-fc-jersey.html"><div class="ph"><img src="images/products/mystrieux-fc-jersey-0.jpg" alt="MYSTÉRIEUX FC Jersey" loading="lazy"><img src="images/products/mystrieux-fc-jersey-1.jpg" alt="MYSTÉRIEUX FC Jersey" loading="lazy"></div><div class="meta"><b>MYSTÉRIEUX FC Jersey</b><span>$60</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Tees & Jerseys" href="product/mystrieux-hritage-jersey.html"><div class="ph"><img src="images/products/mystrieux-hritage-jersey-0.jpg" alt="MYSTÉRIEUX Héritage Jersey" loading="lazy"><img src="images/products/mystrieux-hritage-jersey-1.jpg" alt="MYSTÉRIEUX Héritage Jersey" loading="lazy"></div><div class="meta"><b>MYSTÉRIEUX Héritage Jersey</b><span>$60</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Tees & Jerseys" href="product/mysterieux-script-heather-grey-tee.html"><div class="ph"><img src="images/products/mysterieux-script-heather-grey-tee-0.jpg" alt="“Mystérieux Script” heather grey tee" loading="lazy"><img src="images/products/mysterieux-script-heather-grey-tee-1.jpg" alt="“Mystérieux Script” heather grey tee" loading="lazy"></div><div class="meta"><b>“Mystérieux Script” heather grey tee</b><span>$30</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Tees & Jerseys" href="product/championship-mindset-light-grey-stone-wash-tee.html"><div class="ph"><img src="images/products/championship-mindset-light-grey-stone-wash-tee-0.jpg" alt="“Championship Mindset” Light Grey Stone Wash Tee" loading="lazy"><img src="images/products/championship-mindset-light-grey-stone-wash-tee-1.jpg" alt="“Championship Mindset” Light Grey Stone Wash Tee" loading="lazy"></div><div class="meta"><b>“Championship Mindset” Light Grey Stone Wash Tee</b><span>$35</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Tees & Jerseys" href="product/mysterieux-script-military-green-tee.html"><div class="ph"><img src="images/products/mysterieux-script-military-green-tee-0.jpg" alt="“Mystérieux Script” Military Green Tee" loading="lazy"><img src="images/products/mysterieux-script-military-green-tee-1.jpg" alt="“Mystérieux Script” Military Green Tee" loading="lazy"></div><div class="meta"><b>“Mystérieux Script” Military Green Tee</b><span>$30</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Outerwear" href="product/the-hidden-gem-black-coach-jacket.html"><div class="ph"><img src="images/products/the-hidden-gem-black-coach-jacket-0.jpg" alt="“The Hidden Gem” Black Coach Jacket" loading="lazy"><img src="images/products/the-hidden-gem-black-coach-jacket-1.jpg" alt="“The Hidden Gem” Black Coach Jacket" loading="lazy"></div><div class="meta"><b>“The Hidden Gem” Black Coach Jacket</b><span>$70</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Outerwear" href="product/the-hidden-gem.html"><div class="ph"><img src="images/products/the-hidden-gem-0.jpg" alt="“The Hidden Gem” Gray Crewneck" loading="lazy"><img src="images/products/the-hidden-gem-1.jpg" alt="“The Hidden Gem” Gray Crewneck" loading="lazy"></div><div class="meta"><b>“The Hidden Gem” Gray Crewneck</b><span>$55</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Outerwear" href="product/the-hidden-gem-cream-hoodie.html"><div class="ph"><img src="images/products/the-hidden-gem-cream-hoodie-0.jpg" alt="“The Hidden Gem” Cream Hoodie" loading="lazy"><img src="images/products/the-hidden-gem-cream-hoodie-1.jpg" alt="“The Hidden Gem” Cream Hoodie" loading="lazy"></div><div class="meta"><b>“The Hidden Gem” Cream Hoodie</b><span>$60</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Outerwear" href="product/the-hidden-gem-forest-green-hoodie.html"><div class="ph"><img src="images/products/the-hidden-gem-forest-green-hoodie-0.jpg" alt="“The Hidden Gem” forest green hoodie" loading="lazy"><img src="images/products/the-hidden-gem-forest-green-hoodie-1.jpg" alt="“The Hidden Gem” forest green hoodie" loading="lazy"></div><div class="meta"><b>“The Hidden Gem” forest green hoodie</b><span>$60</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Outerwear" href="product/hustle-harder-university-premium-heavyweight-navy-hoodie.html"><div class="ph"><img src="images/products/hustle-harder-university-premium-heavyweight-navy-hoodie-0.jpg" alt="“Hustle Harder University” Premium Heavyweight Navy Hoodie" loading="lazy"><img src="images/products/hustle-harder-university-premium-heavyweight-navy-hoodie-1.jpg" alt="“Hustle Harder University” Premium Heavyweight Navy Hoodie" loading="lazy"></div><div class="meta"><b>“Hustle Harder University” Premium Heavyweight Navy Hoodie</b><span>$80</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Outerwear" href="product/championship-mindset-black-hoodie.html"><div class="ph"><img src="images/products/championship-mindset-black-hoodie-0.jpg" alt="“Championship Mindset” Black Hoodie" loading="lazy"><img src="images/products/championship-mindset-black-hoodie-1.jpg" alt="“Championship Mindset” Black Hoodie" loading="lazy"></div><div class="meta"><b>“Championship Mindset” Black Hoodie</b><span>$60</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Outerwear" href="product/championship-mindset-slate-blue.html"><div class="ph"><img src="images/products/championship-mindset-slate-blue-0.jpg" alt="“Championship Mindset” Slate Blue Hoodie" loading="lazy"><img src="images/products/championship-mindset-slate-blue-1.jpg" alt="“Championship Mindset” Slate Blue Hoodie" loading="lazy"></div><div class="meta"><b>“Championship Mindset” Slate Blue Hoodie</b><span>$60</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Outerwear" href="product/mysterieux-script-cotton-candy-tie-dye-hoodi.html"><div class="ph"><img src="images/products/mysterieux-script-cotton-candy-tie-dye-hoodi-0.jpg" alt="“Mystérieux Script” Cotton Candy Tie Dye Hoodie" loading="lazy" class="photo"></div><div class="meta"><b>“Mystérieux Script” Cotton Candy Tie Dye Hoodie</b><span>$65</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Outerwear" href="product/international-black-midweight-hoodie.html"><div class="ph"><img src="images/products/international-black-midweight-hoodie-0.jpg" alt="“International” Black Midweight Hoodie" loading="lazy" class="photo"><img src="images/products/international-black-midweight-hoodie-1.jpg" alt="“International” Black Midweight Hoodie" loading="lazy" class="photo"></div><div class="meta"><b>“International” Black Midweight Hoodie</b><span>$60</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Headwear" href="product/og-logo-white-snapback.html"><div class="ph"><img src="images/products/og-logo-white-snapback-0.jpg" alt="“OG LOGO” WHITE SNAPBACK" loading="lazy"><img src="images/products/og-logo-white-snapback-1.jpg" alt="“OG LOGO” WHITE SNAPBACK" loading="lazy"></div><div class="meta"><b>“OG LOGO” WHITE SNAPBACK</b><span>$32</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Headwear" href="product/og-logo-pine-green-snapback.html"><div class="ph"><img src="images/products/og-logo-pine-green-snapback-0.jpg" alt="“OG Logo” Pine Green snapback" loading="lazy"><img src="images/products/og-logo-pine-green-snapback-1.jpg" alt="“OG Logo” Pine Green snapback" loading="lazy"></div><div class="meta"><b>“OG Logo” Pine Green snapback</b><span>$32</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Headwear" href="product/og-logo-red-snapback.html"><div class="ph"><img src="images/products/og-logo-red-snapback-0.jpg" alt="“OG Logo” red snapback" loading="lazy"><img src="images/products/og-logo-red-snapback-1.jpg" alt="“OG Logo” red snapback" loading="lazy"></div><div class="meta"><b>“OG Logo” red snapback</b><span>$32</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Headwear" href="product/og-logo-black-6-panel-snapback.html"><div class="ph"><img src="images/products/og-logo-black-6-panel-snapback-0.jpg" alt="“OG Logo” Black snapback" loading="lazy"></div><div class="meta"><b>“OG Logo” Black snapback</b><span>$32</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Headwear" href="product/hustle-harder.html"><div class="ph"><img src="images/products/hustle-harder-0.jpg" alt="“Hustle Harder” Navy snapback" loading="lazy"><img src="images/products/hustle-harder-1.jpg" alt="“Hustle Harder” Navy snapback" loading="lazy"></div><div class="meta"><b>“Hustle Harder” Navy snapback</b><span>$32</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Headwear" href="product/hustle-harder-black-snapback.html"><div class="ph"><img src="images/products/hustle-harder-black-snapback-0.jpg" alt="“Hustle Harder” Black Snapback" loading="lazy"><img src="images/products/hustle-harder-black-snapback-1.jpg" alt="“Hustle Harder” Black Snapback" loading="lazy"></div><div class="meta"><b>“Hustle Harder” Black Snapback</b><span>$32</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Headwear" href="product/og-logo-fire-red-cable-beanies.html"><div class="ph"><img src="images/products/og-logo-fire-red-cable-beanies-0.jpg" alt="“OG Logo” Fire Red cable beanies" loading="lazy"></div><div class="meta"><b>“OG Logo” Fire Red cable beanies</b><span>$25</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Headwear" href="product/og-logo-black-pastel-pink-snapback.html"><div class="ph"><img src="images/products/og-logo-black-pastel-pink-snapback-0.jpg" alt="“OG Logo” Black/Pastel Pink Snapback" loading="lazy"><img src="images/products/og-logo-black-pastel-pink-snapback-1.jpg" alt="“OG Logo” Black/Pastel Pink Snapback" loading="lazy"></div><div class="meta"><b>“OG Logo” Black/Pastel Pink Snapback</b><span>$30</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Headwear" href="product/og-logo-black-cable-beanies.html"><div class="ph"><img src="images/products/og-logo-black-cable-beanies-0.jpg" alt="“OG Logo” Black Cable Beanies" loading="lazy"></div><div class="meta"><b>“OG Logo” Black Cable Beanies</b><span>$25</span></div><span class="shop-it">View →</span></a>
+  <a class="card" data-cat="Accessories" href="product/the-hidden-gem-tote-bag.html"><div class="ph"><img src="images/products/the-hidden-gem-tote-bag-0.jpg" alt="“The Hidden Gem” Tote Bag" loading="lazy"><img src="images/products/the-hidden-gem-tote-bag-1.jpg" alt="“The Hidden Gem” Tote Bag" loading="lazy"></div><div class="meta"><b>“The Hidden Gem” Tote Bag</b><span>$35</span></div><span class="shop-it">View →</span></a>
+</div>
+
+<footer>
+  <div class="foot-grid">
+    <div><img src="images/site/logo-white.png" alt="Mystérieux"><p>A contemporary barbershop and fashion-forward lifestyle brand in downtown San Jose.</p></div>
+    <div><h4>L'Atelier</h4><ul><li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener">Book an appointment</a></li><li><a href="index.html#barbers">The barbers</a></li><li><a href="index.html#visit">Visit the shop</a></li></ul></div>
+    <div><h4>La Boutique</h4><ul><li><a href="shop.html">Shop all</a></li><li><a href="shop.html?c=Outerwear">Outerwear</a></li><li><a href="shop.html?c=Headwear">Headwear</a></li><li><a href="#" data-cart-open>Your bag</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:+14082969079">(408) 296-9079</a></li><li>28 N Almaden Ave, Ste 30<br>San Jose, CA 95110</li><li><a href="https://www.instagram.com/mysterieux.dtsj/" target="_blank" rel="noopener">Instagram — Shop</a></li><li><a href="https://www.instagram.com/mysterieux.brand/" target="_blank" rel="noopener">Instagram — Brand</a></li></ul></div>
+  </div>
+  <div class="foot-base"><span>© 2026 Mystérieux · San Jose, CA</span><span>Best Barbershop — Best of Silicon Valley 2026</span></div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  const buttons = document.querySelectorAll('.filters button');
+  const cards = document.querySelectorAll('.card');
+  function show(cat) {
+    buttons.forEach(b => b.setAttribute('aria-pressed', b.dataset.c === cat));
+    cards.forEach(c => c.hidden = cat !== 'all' && c.dataset.cat !== cat);
+  }
+  buttons.forEach(b => b.addEventListener('click', () => show(b.dataset.c)));
+  const start = new URLSearchParams(location.search).get('c');
+  if (start && [...buttons].some(b => b.dataset.c === start)) show(start);
+</script>
+</body>
+</html>

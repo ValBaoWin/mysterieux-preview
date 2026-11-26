@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mystérieux — Barbershop &amp; Lifestyle Brand · Downtown San Jose</title>
+<meta name="description" content="Mystérieux: a contemporary barbershop and fashion-forward lifestyle brand at 28 N Almaden Ave, downtown San Jose. Best Barbershop — Best of Silicon Valley 2026.">
+<link rel="icon" href="images/site/logo-black.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Hanken+Grotesk:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* split hero: the two fronts */
+  .fronts{display:flex;height:calc(100svh - 65px);min-height:600px;background:var(--night);position:relative;overflow:hidden}
+  .front{position:relative;flex:1;overflow:hidden;color:var(--paper);display:flex;flex-direction:column;justify-content:flex-end;
+    padding:clamp(24px,4vw,56px);transition:flex .9s cubic-bezier(.6,0,.2,1)}
+  .front img{position:absolute;inset:0;z-index:0;transform:scale(1.06);transition:transform 1.4s cubic-bezier(.2,.7,.2,1),filter .9s}
+  .front::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(13,13,14,.88),rgba(13,13,14,.05) 60%)}
+  .front > :not(img){position:relative;z-index:2}
+  .fronts:hover .front{flex:.8}
+  .fronts .front:hover{flex:1.35}
+  .front:hover img{transform:scale(1)}
+  .fronts:hover .front:not(:hover) img{filter:grayscale(1) brightness(.6)}
+  .front .num{font:500 12px/1 var(--body);letter-spacing:.24em;text-transform:uppercase;color:rgba(251,250,248,.7)}
+  .front h2{font-family:var(--display);font-weight:800;font-stretch:66%;text-transform:uppercase;font-size:clamp(54px,7.6vw,128px);line-height:.85;margin:14px 0 6px}
+  .front h2 .fr{display:block;font-size:.5em;color:#aab3ff;margin-bottom:6px}
+  .front .btn{align-self:flex-start}
+  .front p{max-width:380px;color:rgba(251,250,248,.8);margin-bottom:24px}
+  .front + .front{border-left:1px solid rgba(251,250,248,.18)}
+  .seal{position:absolute;z-index:5;left:50%;top:clamp(26px,5vh,56px);transform:translateX(-50%);text-align:center;color:var(--paper);pointer-events:none}
+  .seal img{width:clamp(84px,9vw,120px);height:auto;margin:0 auto;filter:drop-shadow(0 6px 24px rgba(0,0,0,.5))}
+  .award{position:absolute;z-index:6;right:clamp(18px,3vw,40px);top:clamp(18px,3vw,40px);width:132px;height:132px;border-radius:50%;
+    background:var(--cobalt);color:#fff;display:grid;place-items:center;text-align:center;padding:14px;
+    font:600 9.5px/1.35 var(--body);letter-spacing:.16em;text-transform:uppercase;animation:spin 26s linear infinite}
+  .award b{display:block;font:italic 400 27px/1 var(--serif);letter-spacing:0;text-transform:none;margin:5px 0}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .award:hover{animation-play-state:paused}
+  @media (max-width:760px){
+    .fronts{flex-direction:column;height:auto}
+    .front{min-height:66svh}
+    .front + .front{border-left:0;border-top:1px solid rgba(251,250,248,.18)}
+    .fronts:hover .front,.fronts .front:hover{flex:1}
+    .seal{top:22px}
+    .award{width:104px;height:104px;font-size:8px;top:auto;bottom:calc(66svh - 52px);right:18px}
+    .award b{font-size:21px}
+  }
+
+  /* proof strip */
+  .proof{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--rule);background:var(--paper)}
+  .proof div{padding:30px var(--pad);border-right:1px solid var(--rule)}
+  .proof div:last-child{border-right:0}
+  .proof b{display:block;font-family:var(--display);font-weight:800;font-stretch:70%;font-size:clamp(34px,3.6vw,52px);line-height:1}
+  .proof span{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  @media (max-width:760px){.proof{grid-template-columns:1fr 1fr}.proof div:nth-child(2){border-right:0}.proof div:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
+
+  /* atelier */
+  .atelier{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2vw,28px);align-items:start}
+  .atelier .copy{grid-column:1/6;position:sticky;top:120px}
+  .atelier .copy .h-lg{margin:22px 0 30px}
+  .atelier .copy .lede + p{margin-top:18px;color:var(--ink-soft)}
+  .atelier .copy .btn{margin-top:34px}
+  .atelier .p1{grid-column:7/13;aspect-ratio:4/5}
+  .atelier .p2{grid-column:6/10;aspect-ratio:1;margin-top:-18%}
+  .atelier .p3{grid-column:10/13;aspect-ratio:3/4;margin-top:8%}
+  .atelier figure{overflow:hidden;position:relative}
+  .atelier figcaption{position:absolute;left:12px;bottom:10px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+  @media (max-width:900px){
+    .atelier .copy{grid-column:1/-1;position:static}
+    .atelier .p1{grid-column:1/-1}
+    .atelier .p2{grid-column:1/8;margin-top:0}
+    .atelier .p3{grid-column:8/13;margin-top:20%}
+  }
+  blockquote.pull{grid-column:1/-1;margin-top:clamp(50px,7vw,100px);padding-top:34px;border-top:1px solid var(--rule);
+    font-family:var(--serif);font-size:clamp(30px,3.6vw,54px);line-height:1.1;max-width:1100px}
+  blockquote.pull cite{display:block;margin-top:18px;font:600 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;font-style:normal;color:var(--ink-soft)}
+
+  /* barbers */
+  .barbers{background:var(--night);color:var(--paper)}
+  .barbers .eyebrow{color:#8d8a85}
+  .barbers .eyebrow b{color:#8f9bff}
+  .roster{list-style:none;border-top:1px solid rgba(251,250,248,.16);counter-reset:b}
+  .roster li{counter-increment:b;border-bottom:1px solid rgba(251,250,248,.16)}
+  .roster a{display:grid;grid-template-columns:70px 1fr auto;align-items:center;gap:20px;padding:22px 0;position:relative;transition:padding .35s,color .35s}
+  .roster a::before{content:counter(b,decimal-leading-zero);font:500 13px/1 var(--body);letter-spacing:.14em;color:#8d8a85}
+  .roster .name{font-family:var(--display);font-weight:800;font-stretch:66%;text-transform:uppercase;font-size:clamp(34px,4.6vw,68px);line-height:.95}
+  .roster .name .fr{font-size:.62em;color:#aab3ff;margin-left:10px}
+  .roster .go{font:600 12px/1 var(--body);letter-spacing:.2em;text-transform:uppercase;opacity:.5;transition:opacity .3s}
+  .roster a:hover{padding-left:16px;color:#fff}
+  .roster a:hover .go{opacity:1;color:#8f9bff}
+  .roster a:hover .name{color:#aab3ff}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:70px}
+  .steps div{border-top:1px solid rgba(251,250,248,.3);padding-top:18px}
+  .steps i{font:italic 400 34px/1 var(--serif);color:#8f9bff}
+  .steps h3{font:600 13px/1.3 var(--body);letter-spacing:.18em;text-transform:uppercase;margin:12px 0 8px}
+  .steps p{color:#b9b6b0;font-size:15px}
+  @media (max-width:760px){.steps{grid-template-columns:1fr}.roster a{grid-template-columns:44px 1fr}.roster .go{display:none}}
+
+  /* work */
+  .work-rail{display:grid;grid-auto-flow:column;grid-auto-columns:clamp(240px,24vw,360px);gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;
+    padding:0 var(--pad) 18px;margin:0 calc(var(--pad) * -1);scrollbar-width:thin}
+  .work-rail figure{aspect-ratio:3/4;overflow:hidden;scroll-snap-align:start;background:#ddd}
+  .work-rail img{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .work-rail figure:hover img{transform:scale(1.04)}
+
+  /* boutique preview */
+  .boutique{background:var(--paper);border-top:1px solid var(--rule)}
+  .products{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,22px)}
+  @media (max-width:900px){.products{grid-template-columns:1fr 1fr}}
+
+  /* founder */
+  .founder{display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;background:var(--night);color:var(--paper)}
+  .founder figure{min-height:560px}
+  .founder .txt{padding:clamp(50px,7vw,110px) var(--pad);display:flex;flex-direction:column;justify-content:center}
+  .founder .eyebrow{color:#8d8a85}
+  .founder .h-lg{margin:20px 0 26px}
+  .founder p{color:#c9c6c0;max-width:480px}
+  .founder .btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+  .founder .btn.line{color:var(--paper);border-color:rgba(251,250,248,.35)}
+  .founder .btn.line:hover{background:var(--paper);color:var(--ink)}
+  @media (max-width:900px){.founder{grid-template-columns:1fr}.founder figure{min-height:420px}}
+
+  /* visit */
+  .visit{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:stretch}
+  .visit dl{display:grid;grid-template-columns:120px 1fr;row-gap:16px;margin-top:40px;border-top:1px solid var(--rule);padding-top:26px}
+  .visit dt{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);padding-top:5px}
+  .visit dd{font-size:19px}
+  .visit dd small{display:block;font-size:13px;color:var(--ink-soft)}
+  .visit dd a{border-bottom:1px solid var(--rule)}
+  .visit dd a:hover{border-color:var(--cobalt);color:var(--cobalt)}
+  .visit .pics{display:grid;grid-template-rows:1fr 1fr;gap:14px;min-height:560px}
+  .visit .pics figure{overflow:hidden}
+  .visit iframe{width:100%;height:100%;border:0;filter:grayscale(1) contrast(1.05)}
+  @media (max-width:900px){.visit{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div style="position:fixed;left:0;right:0;bottom:0;z-index:80;background:#2b3dff;color:#fff;text-align:center;font:600 13px/1.4 -apple-system,Helvetica,Arial,sans-serif;padding:9px 16px;letter-spacing:.02em">Website preview — not live yet</div>
+
+<header class="bar">
+  <nav class="left" aria-label="Main">
+    <a href="index.html#atelier">L'Atelier</a>
+    <a href="index.html#barbers">Barbers</a>
+    <a href="shop.html">La Boutique</a>
+    <a href="index.html#visit">Visit</a>
+  </nav>
+  <a class="logo" href="index.html" aria-label="Mystérieux home"><img src="images/site/logo-black.png" alt="Mystérieux"></a>
+  <div class="right">
+    <button class="cart" type="button" data-cart-open aria-label="Open bag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1.2 12H6.2L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="count" data-cart-count hidden></span></button>
+    <a class="btn" href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener">Book</a>
+  </div>
+</header>
+
+<div class="fronts">
+  <div class="seal"><img src="images/site/logo-white.png" alt=""></div>
+  <a class="award" href="#visit" aria-label="Best Barbershop, Best of Silicon Valley 2026"><span>The Mercury News<b>Best Barbershop</b>Best of SV 2026</span></a>
+
+  <a class="front" href="#atelier">
+    <img src="images/site/store-hero-2.jpg" alt="Inside the Mystérieux barbershop, with the Eiffel Tower mural">
+    <span class="num">01 — The Barbershop</span>
+    <h2><span class="fr">L'Atelier</span>Precision<br>Barbering</h2>
+    <p>A contemporary hairdressing space that redefines the limits of customer service.</p>
+    <span class="btn light">Book a chair</span>
+  </a>
+  <a class="front" href="shop.html">
+    <img src="images/products/international-black-midweight-hoodie-0.jpg" alt="Model wearing the Mystérieux International hoodie">
+    <span class="num">02 — The Brand</span>
+    <h2><span class="fr">La Boutique</span>Fashion<br>Forward</h2>
+    <p>Hoodies, jerseys, tees and caps — a lifestyle label made in the shop's image.</p>
+    <span class="btn light">Shop the brand</span>
+  </a>
+</div>
+
+<div class="proof">
+  <div><b>5.0</b><span>Yelp · 188 reviews</span></div>
+  <div><b>4.9</b><span>Google · 84 reviews</span></div>
+  <div><b>10</b><span>Barbers &amp; stylists</span></div>
+  <div><b>7+</b><span>Years downtown</span></div>
+</div>
+
+<section id="atelier">
+  <div class="atelier">
+    <div class="copy reveal">
+      <p class="eyebrow"><b>01</b> L'Atelier</p>
+      <h2 class="h-lg">Two fronts.<br><span class="fr">One</span> standard.</h2>
+      <p class="lede">Mystérieux thrives on dual fronts: a contemporary barbering space built on precision, and a fashion-forward lifestyle brand worn far beyond the chair.</p>
+      <p>Behind the glass at 28 N Almaden Ave: white concrete, mirrored stations, the Eiffel Tower on the wall and a crew of barbers who take your ideas and turn them into a finished cut.</p>
+      <a class="btn" href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener">Book an appointment
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <figure class="p1 reveal"><img src="images/site/interior.jpg" alt="Mystérieux interior with mirrored stations"><figcaption>The floor</figcaption></figure>
+    <figure class="p2 reveal"><img src="images/site/rod-cutting-bw.jpg" alt="A barber at work"><figcaption>The craft</figcaption></figure>
+    <figure class="p3 reveal"><img src="images/site/logo-wall.jpg" alt="The Mystérieux logo wall and Eiffel mural"><figcaption>The house</figcaption></figure>
+    <blockquote class="pull reveal">“He’s able to take my haircut ideas and turn them into a great final product.”<cite>— Google review</cite></blockquote>
+  </div>
+</section>
+
+<section id="barbers" class="barbers">
+  <div class="split-head reveal">
+    <div>
+      <p class="eyebrow"><b>02</b> Choose your barber</p>
+      <h2 class="h-lg">The <span class="fr">Crew</span></h2>
+    </div>
+    <a class="btn light" href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener">Book with anyone</a>
+  </div>
+  <ol class="roster reveal">
+    <li><a href="https://getsquire.com/discover/barbershop/mysterieux-san-jose/barber/rod-timoteo" target="_blank" rel="noopener"><span class="name">Rod T.<span class="fr">founder</span></span><span class="go">Book ↗</span></a></li>
+    <li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener"><span class="name">Cristian O.</span><span class="go">Book ↗</span></a></li>
+    <li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener"><span class="name">Evan A.</span><span class="go">Book ↗</span></a></li>
+    <li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener"><span class="name">Andrew R.</span><span class="go">Book ↗</span></a></li>
+    <li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener"><span class="name">Eric W.</span><span class="go">Book ↗</span></a></li>
+    <li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener"><span class="name">Katrina U.</span><span class="go">Book ↗</span></a></li>
+    <li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener"><span class="name">Jolan D.</span><span class="go">Book ↗</span></a></li>
+    <li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener"><span class="name">Matty T.</span><span class="go">Book ↗</span></a></li>
+    <li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener"><span class="name">Brandon D.</span><span class="go">Book ↗</span></a></li>
+    <li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener"><span class="name">Daniel T.</span><span class="go">Book ↗</span></a></li>
+  </ol>
+  <div class="steps reveal">
+    <div><i>i.</i><h3>Pick your barber</h3><p>Each barber sets their own services and pricing — see the full menu on Squire.</p></div>
+    <div><i>ii.</i><h3>Book online</h3><p>Reserve your time online in a few taps — no calls, no waiting around.</p></div>
+    <div><i>iii.</i><h3>Take a seat</h3><p>Suite 30, inside 28 N Almaden Ave in downtown San Jose. Come a few minutes early.</p></div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="split-head reveal">
+    <div>
+      <p class="eyebrow"><b>03</b> Recent work</p>
+      <h2 class="h-lg">From the <span class="fr">chair</span></h2>
+    </div>
+    <a class="btn line" href="https://www.instagram.com/mysterieux.dtsj/" target="_blank" rel="noopener">@mysterieux.dtsj ↗</a>
+  </div>
+  <div class="work-rail reveal">
+    <figure><img src="images/site/cut-1.jpg" alt="Textured crop" loading="lazy"></figure>
+    <figure><img src="images/site/cut-2.jpg" alt="Bleached textured cut" loading="lazy"></figure>
+    <figure><img src="images/site/cut-3.jpg" alt="Feather razor cut" loading="lazy"></figure>
+    <figure><img src="images/site/cut-4.jpg" alt="Long flow cut" loading="lazy"></figure>
+    <figure><img src="images/site/cut-5.jpg" alt="Swept-back cut" loading="lazy"></figure>
+    <figure><img src="images/site/cut-6.jpg" alt="Slick side part" loading="lazy"></figure>
+  </div>
+</section>
+
+<section class="boutique" id="boutique">
+  <div class="split-head reveal">
+    <div>
+      <p class="eyebrow"><b>04</b> La Boutique</p>
+      <h2 class="h-lg">Wear the <span class="fr">house</span></h2>
+    </div>
+    <a class="btn" href="shop.html">Shop all
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+  </div>
+  <div class="products reveal">
+    <a class="card" data-cat="Tees & Jerseys" href="product/mystrieux-fc-jersey.html"><div class="ph"><img src="images/products/mystrieux-fc-jersey-0.jpg" alt="MYSTÉRIEUX FC Jersey" loading="lazy"><img src="images/products/mystrieux-fc-jersey-1.jpg" alt="MYSTÉRIEUX FC Jersey" loading="lazy"></div><div class="meta"><b>MYSTÉRIEUX FC Jersey</b><span>$60</span></div><span class="shop-it">View →</span></a>
+    <a class="card" data-cat="Tees & Jerseys" href="product/mystrieux-hritage-jersey.html"><div class="ph"><img src="images/products/mystrieux-hritage-jersey-0.jpg" alt="MYSTÉRIEUX Héritage Jersey" loading="lazy"><img src="images/products/mystrieux-hritage-jersey-1.jpg" alt="MYSTÉRIEUX Héritage Jersey" loading="lazy"></div><div class="meta"><b>MYSTÉRIEUX Héritage Jersey</b><span>$60</span></div><span class="shop-it">View →</span></a>
+    <a class="card" data-cat="Outerwear" href="product/the-hidden-gem-black-coach-jacket.html"><div class="ph"><img src="images/products/the-hidden-gem-black-coach-jacket-0.jpg" alt="“The Hidden Gem” Black Coach Jacket" loading="lazy"><img src="images/products/the-hidden-gem-black-coach-jacket-1.jpg" alt="“The Hidden Gem” Black Coach Jacket" loading="lazy"></div><div class="meta"><b>“The Hidden Gem” Black Coach Jacket</b><span>$70</span></div><span class="shop-it">View →</span></a>
+    <a class="card" data-cat="Outerwear" href="product/the-hidden-gem-cream-hoodie.html"><div class="ph"><img src="images/products/the-hidden-gem-cream-hoodie-0.jpg" alt="“The Hidden Gem” Cream Hoodie" loading="lazy"><img src="images/products/the-hidden-gem-cream-hoodie-1.jpg" alt="“The Hidden Gem” Cream Hoodie" loading="lazy"></div><div class="meta"><b>“The Hidden Gem” Cream Hoodie</b><span>$60</span></div><span class="shop-it">View →</span></a>
+    <a class="card" data-cat="Outerwear" href="product/hustle-harder-university-premium-heavyweight-navy-hoodie.html"><div class="ph"><img src="images/products/hustle-harder-university-premium-heavyweight-navy-hoodie-0.jpg" alt="“Hustle Harder University” Premium Heavyweight Navy Hoodie" loading="lazy"><img src="images/products/hustle-harder-university-premium-heavyweight-navy-hoodie-1.jpg" alt="“Hustle Harder University” Premium Heavyweight Navy Hoodie" loading="lazy"></div><div class="meta"><b>“Hustle Harder University” Premium Heavyweight Navy Hoodie</b><span>$80</span></div><span class="shop-it">View →</span></a>
+    <a class="card" data-cat="Headwear" href="product/og-logo-pine-green-snapback.html"><div class="ph"><img src="images/products/og-logo-pine-green-snapback-0.jpg" alt="“OG Logo” Pine Green snapback" loading="lazy"><img src="images/products/og-logo-pine-green-snapback-1.jpg" alt="“OG Logo” Pine Green snapback" loading="lazy"></div><div class="meta"><b>“OG Logo” Pine Green snapback</b><span>$32</span></div><span class="shop-it">View →</span></a>
+    <a class="card" data-cat="Tees & Jerseys" href="product/mysterieux-script-military-green-tee.html"><div class="ph"><img src="images/products/mysterieux-script-military-green-tee-0.jpg" alt="“Mystérieux Script” Military Green Tee" loading="lazy"><img src="images/products/mysterieux-script-military-green-tee-1.jpg" alt="“Mystérieux Script” Military Green Tee" loading="lazy"></div><div class="meta"><b>“Mystérieux Script” Military Green Tee</b><span>$30</span></div><span class="shop-it">View →</span></a>
+    <a class="card" data-cat="Headwear" href="product/og-logo-fire-red-cable-beanies.html"><div class="ph"><img src="images/products/og-logo-fire-red-cable-beanies-0.jpg" alt="“OG Logo” Fire Red cable beanies" loading="lazy"></div><div class="meta"><b>“OG Logo” Fire Red cable beanies</b><span>$25</span></div><span class="shop-it">View →</span></a>
+  </div>
+</section>
+
+<section class="founder">
+  <figure><img src="images/site/rod-cutting.jpg" alt="Rod Timoteo, founder of Mystérieux, cutting hair" loading="lazy"></figure>
+  <div class="txt reveal">
+    <p class="eyebrow">05 — The founder</p>
+    <h2 class="h-lg">Rod <span class="fr">Timoteo</span></h2>
+    <p>Licensed barber, educator and visionary. Rod built Mystérieux from humble beginnings into a downtown San Jose destination — a shop where the fundamentals are non-negotiable and the experience is everything.</p>
+    <div class="btns">
+      <a class="btn light" href="https://getsquire.com/discover/barbershop/mysterieux-san-jose/barber/rod-timoteo" target="_blank" rel="noopener">Book with Rod</a>
+      <a class="btn line" href="https://www.instagram.com/rodtimoteojr/" target="_blank" rel="noopener">@rodtimoteojr ↗</a>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="visit">
+    <div class="reveal">
+      <p class="eyebrow"><b>06</b> Visit</p>
+      <h2 class="h-lg" style="margin-top:20px">Downtown<br><span class="fr">San José</span></h2>
+      <dl>
+        <dt>Address</dt><dd><a href="https://maps.google.com/?q=28+N+Almaden+Ave+Ste+30+San+Jose+CA+95110" target="_blank" rel="noopener">28 N Almaden Ave, Suite 30<br>San Jose, CA 95110</a></dd>
+        <dt>Phone</dt><dd><a href="tel:+14082969079">(408) 296-9079</a></dd>
+        <dt>Hours</dt><dd>Mon – Sat · 9am – 7pm<small>Barber availability varies — check Squire</small></dd>
+        <dt>Book</dt><dd><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener">Squire</a></dd>
+        <dt>Follow</dt><dd><a href="https://www.instagram.com/mysterieux.dtsj/" target="_blank" rel="noopener">@mysterieux.dtsj</a> · <a href="https://www.instagram.com/mysterieux.brand/" target="_blank" rel="noopener">@mysterieux.brand</a></dd>
+      </dl>
+    </div>
+    <div class="pics reveal">
+      <figure><img src="images/site/store-hero-1.jpg" alt="The building at 28 N Almaden Ave at dusk" loading="lazy" style="object-position:center 60%"></figure>
+      <figure><iframe title="Map to Mystérieux" loading="lazy" src="https://maps.google.com/maps?q=28%20N%20Almaden%20Ave%20Ste%2030%2C%20San%20Jose%2C%20CA%2095110&z=16&output=embed"></iframe></figure>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot-grid">
+    <div><img src="images/site/logo-white.png" alt="Mystérieux"><p>A contemporary barbershop and fashion-forward lifestyle brand in downtown San Jose.</p></div>
+    <div><h4>L'Atelier</h4><ul><li><a href="https://getsquire.com/booking/book/mysterieux-san-jose" target="_blank" rel="noopener">Book an appointment</a></li><li><a href="index.html#barbers">The barbers</a></li><li><a href="index.html#visit">Visit the shop</a></li></ul></div>
+    <div><h4>La Boutique</h4><ul><li><a href="shop.html">Shop all</a></li><li><a href="shop.html?c=Outerwear">Outerwear</a></li><li><a href="shop.html?c=Headwear">Headwear</a></li><li><a href="#" data-cart-open>Your bag</a></li></ul></div>
+    <div><h4>Contact</h4><ul><li><a href="tel:+14082969079">(408) 296-9079</a></li><li>28 N Almaden Ave, Ste 30<br>San Jose, CA 95110</li><li><a href="https://www.instagram.com/mysterieux.dtsj/" target="_blank" rel="noopener">Instagram — Shop</a></li><li><a href="https://www.instagram.com/mysterieux.brand/" target="_blank" rel="noopener">Instagram — Brand</a></li></ul></div>
+  </div>
+  <div class="foot-base"><span>© 2026 Mystérieux · San Jose, CA</span><span>Best Barbershop — Best of Silicon Valley 2026</span></div>
+</footer>
+
+<script src="cart.js"></script>
+<script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  const nav = performance.getEntriesByType('navigation')[0];
+  if (nav && nav.type !== 'navigate' && location.hash) history.replaceState(null, '', location.pathname + location.search);
+  if (!location.hash) window.scrollTo(0, 0);
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
